@@ -6,7 +6,7 @@ By employing a blend of Excel, SQL, and Tableau, I meticulously examined the vas
 
 [Datasets Used](https://www.kaggle.com/datasets/victorsoeiro/netflix-tv-shows-and-movies?select=titles.csv)
 
-[SQL Analysis (Code)](https://github.com/SharifAthar/Netflix-Shows-and-Movies-SQL/blob/main/Netflix_SQL_Analysis.sql)
+[Netflix Analysis- SQL Code](https://github.com/sambedaa/SQL-Netflix-Shows-and-Movies/blob/main/Data%20Analysis-%20Netflix.sql)
 
 [Netflix Dashboard - Tableau](https://public.tableau.com/app/profile/sharif.athar/viz/NetflixShowsMoviesDashboard/Dashboard1)
 
