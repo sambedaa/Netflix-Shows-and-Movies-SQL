@@ -19,14 +19,13 @@ By employing a blend of Excel, SQL, and Tableau, I meticulously examined the vas
 ## 1. Which movies and shows on Netflix ranked in the top 10 and bottom 10 based on their IMDB scores?
 - Top 10 Movies
 ```mysql
-SELECT title, 
-type, 
-imdb_score
-FROM shows_movies.titles
-WHERE imdb_score >= 8.0
-AND type = 'MOVIE'
-ORDER BY imdb_score DESC
-LIMIT 10
+SELECT DISTINCT TOP (10) [title]
+      ,[type]
+      ,[imdb_score]
+  FROM [AdventureWorksDW2022].[dbo].[titles]
+  WHERE [imdb_score] >= '8.5'
+  AND [type] = 'MOVIE' 
+  ORDER BY [imdb_score] DESC;
 ```
 Result: 
 
