@@ -33,14 +33,13 @@ Result:
 
 - Top 10 Shows
 ```mysql
-SELECT title, 
-type, 
-imdb_score
-FROM shows_movies.titles
-WHERE imdb_score >= 8.0
-AND type = 'SHOW'
-ORDER BY imdb_score DESC
-LIMIT 10
+SELECT DISTINCT TOP (10) [title]
+      ,[type]
+      ,[imdb_score]
+  FROM [AdventureWorksDW2022].[dbo].[titles]
+  WHERE [imdb_score] >= '8.5'
+  AND [type] = 'SHOW' 
+  ORDER BY [imdb_score] DESC;
 ```
 Result: 
 
