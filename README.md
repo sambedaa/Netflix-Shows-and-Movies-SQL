@@ -8,7 +8,7 @@ By employing a blend of Excel, SQL, and Tableau, I meticulously examined the vas
 
 [Netflix Analysis- SQL Code](https://github.com/sambedaa/SQL-Netflix-Shows-and-Movies/blob/main/Data%20Analysis-%20Netflix.sql)
 
-[Netflix Dashboard - Tableau](https://public.tableau.com/app/profile/sharif.athar/viz/NetflixShowsMoviesDashboard/Dashboard1)
+[Netflix Dashboard - Tableau](https://public.tableau.com/app/profile/sambeda.nayak/viz/NetflixShowsandMoviesAnalysis/Dashboard1?publish=yes)
 
 - **Business Problem:** Netflix wants to gather useful insights on their shows and movies for their subscribers through their datasets. The issue is, they are working with too much data (approximately 82k rows of data combined) and are unsure how to effectively analyze and extract meaningful insights from it. They need a robust and scalable data analytics solution to handle the vast amount of data and uncover valuable patterns and trends.
 
@@ -57,7 +57,7 @@ SELECT TOP (10) [title]
 ```
 Result: 
 
-![Q3](https://i.ibb.co/tMXV1yp/Screen-Shot-2023-07-09-at-9-47-24-PM.png)
+![Q3](C:\Users\hp\OneDrive - National Institute of Technology, Rourkela\Pictures\Screenshots\Screenshot 2023-09-10 020616.png)
 
 - Bottom 10 Shows
 ```mysql
