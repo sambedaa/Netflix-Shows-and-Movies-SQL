@@ -106,14 +106,13 @@ Result:
 ![Q6](https://i.ibb.co/SvJyjgF/Screen-Shot-2023-07-09-at-10-16-52-PM.png)
 
 ```mysql
-SELECT age_certification, 
-COUNT(*) AS certification_count
-FROM shows_movies.titles
-WHERE type = 'Movie' 
-AND age_certification != 'N/A'
-GROUP BY age_certification
-ORDER BY certification_count DESC
-LIMIT 5;
+SELECT TOP (5) [age_certification], 
+       COUNT(*) AS [certification_count]
+FROM [AdventureWorksDW2022].[dbo].[titles]
+WHERE type = 'Movie'  
+
+GROUP BY [age_certification] 
+ORDER BY [certification_count] DESC;
 ```
 Results: 
 
