@@ -62,13 +62,24 @@ Result:
 
 - Bottom 10 Shows
 ```mysql
-SELECT title, 
-type, 
-imdb_score
-FROM shows_movies.titles
-WHERE type = 'SHOW'
-ORDER BY imdb_score ASC
-LIMIT 10
+WITH CTE([title]
+      ,[type], 
+    duplicatecount)
+AS (SELECT [title]
+      ,[type], 
+           ROW_NUMBER() OVER(PARTITION BY [title]
+      ,[type]
+           ORDER BY id) AS DuplicateCount
+    FROM [AdventureWorksDW2022].[dbo].[titles])
+DELETE FROM CTE
+WHERE DuplicateCount > 1;
+SELECT TOP (10) [title]
+      ,[type]
+      ,[imdb_score]
+  FROM [AdventureWorksDW2022].[dbo].[titles]
+  WHERE [imdb_score] >= '0'
+  AND [type] = 'SHOW' 
+  ORDER BY [imdb_score] ASC;
 ```
 Result: 
 
