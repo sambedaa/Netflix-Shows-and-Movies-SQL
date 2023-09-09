@@ -77,11 +77,11 @@ An IMDB score is a widely recognized measure of the overall quality and populari
 
 ## 2. How many movies and shows fall in each decade in Netflix's library?
 ```mysql
-SELECT CONCAT(FLOOR(release_year / 10) * 10, 's') AS decade,
+SELECT CONCAT(FLOOR([release_year] / 10) * 10, 's') AS decade,
 	COUNT(*) AS movies_shows_count
-FROM shows_movies.titles
-WHERE release_year >= 1940
-GROUP BY CONCAT(FLOOR(release_year / 10) * 10, 's')
+FROM [AdventureWorksDW2022].[dbo].[titles]
+WHERE [release_year] >= 1940
+GROUP BY CONCAT(FLOOR([release_year] / 10) * 10, 's')
 ORDER BY decade;
 ```
 Result: 
