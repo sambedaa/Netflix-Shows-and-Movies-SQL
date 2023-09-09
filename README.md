@@ -126,13 +126,12 @@ When examining the distribution of movies and shows across age certifications, t
 ## 4. Which genres are the most common? 
 - Top 10 most common genres for MOVIES
 ```mysql
-SELECT genres, 
+SELECT TOP (10) [genres], 
 COUNT(*) AS title_count
-FROM shows_movies.titles 
-WHERE type = 'Movie'
+FROM [AdventureWorksDW2022].[dbo].[titles] AS t
+WHERE type = 'Movie' 
 GROUP BY genres
-ORDER BY title_count DESC
-LIMIT 10;
+ORDER BY title_count DESC;
 ```
 Result:
 
@@ -140,13 +139,12 @@ Result:
 
 - Top 10 most common genres for SHOWS
 ```mysql
-SELECT genres, 
+SELECT TOP (10) [genres], 
 COUNT(*) AS title_count
-FROM shows_movies.titles 
-WHERE type = 'Show'
+FROM [AdventureWorksDW2022].[dbo].[titles] AS t
+WHERE type = 'Show' 
 GROUP BY genres
-ORDER BY title_count DESC
-LIMIT 10;
+ORDER BY title_count DESC;
 ```
 Result: 
 
