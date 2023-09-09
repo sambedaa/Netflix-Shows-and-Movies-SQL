@@ -1,3 +1,16 @@
+--Remove Duplicate entries
+WITH CTE([title]
+      ,[type], 
+    duplicatecount)
+AS (SELECT [title]
+      ,[type], 
+           ROW_NUMBER() OVER(PARTITION BY [title]
+      ,[type]
+           ORDER BY id) AS DuplicateCount
+    FROM [AdventureWorksDW2022].[dbo].[titles])
+DELETE FROM CTE
+WHERE DuplicateCount > 1;
+
 -- What were the top 10 movies according to IMDB score?
 SELECT title, 
 type, 
