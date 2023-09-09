@@ -94,12 +94,12 @@ Even though the 2020s are still in progress, the dataset reveals an impressive c
 
 ## 3. How did age-certifications impact the dataset?
 ```mysql
-SELECT DISTINCT age_certification, 
-ROUND(AVG(imdb_score),2) AS avg_imdb_score,
-ROUND(AVG(tmdb_score),2) AS avg_tmdb_score
-FROM shows_movies.titles
-GROUP BY age_certification
-ORDER BY avg_imdb_score DESC
+SELECT DISTINCT [age_certification], 
+       ROUND(AVG(CAST(imdb_score AS FLOAT)), 2) AS [avg_imdb_score],
+       ROUND(AVG(CAST(tmdb_score AS FLOAT)), 2) AS [avg_tmdb_score]
+FROM [AdventureWorksDW2022].[dbo].[titles]
+GROUP BY [age_certification]
+ORDER BY [avg_imdb_score] DESC;
 ```
 Result: 
 
