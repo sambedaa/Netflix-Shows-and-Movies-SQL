@@ -154,13 +154,12 @@ Result:
 
 - Top 3 most common genres OVERALL
 ```mysql
-SELECT t.genres, 
+SELECT TOP (3) t.genres, 
 COUNT(*) AS genre_count
-FROM shows_movies.titles AS t
+FROM [AdventureWorksDW2022].[dbo].[titles] AS t
 WHERE t.type = 'Movie' or t.type = 'Show'
 GROUP BY t.genres
-ORDER BY genre_count DESC
-LIMIT 3;
+ORDER BY genre_count DESC;
 ```
 Result: 
 
